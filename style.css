@@ -1,0 +1,105 @@
+.title {
+    position: static;
+    font-size: 4vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: default;
+    text-align: center;
+    margin: 0;
+}
+
+.popup {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: lightgray;
+    padding: 0.2em;
+    margin: 0;
+    width: 40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.win {
+    font-size: 5vw;
+    color: green;
+}
+
+.lose {
+    font-size: 3vw;
+    color: red;
+}
+
+.word-reveal {
+    font-size: 2vw;
+    color: black;
+}
+
+.game-container {
+    display: grid;
+    position: relative;
+    width: min-content;
+    height: min-content;
+    user-select: none;
+    top: 2vh;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.2em;
+}
+
+.square {
+    margin: 0.1em;
+    display: flex;
+    width: 8vh;
+    height: 8vh;
+    font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid black;
+}
+
+.letters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    top: 5vh;
+}
+
+.lttr {
+    width: 1.8em;
+    height: 1.8em;
+    cursor: pointer;
+    user-select: none;
+    margin: 0.2%;
+    line-height: 1.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 0.1em solid black;
+    background-color: lightgray;
+}
+
+@media (max-width: 800px) {
+    .lttr {
+        width: 2.8em;
+        height: 2.8em;
+        font-size: 3.4vw;
+        line-height: 2.8em;
+    }
+
+    .square {
+        font-size: 4vw;
+    }
+}
