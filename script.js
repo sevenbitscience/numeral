@@ -132,7 +132,7 @@ $(document).ready(function () {
             showWord(guess);
         }
         else if (e.which == 13) {
-            location.reload()
+            location.reload();
         }
     });
         
@@ -163,7 +163,7 @@ $(document).ready(function () {
                 errorShake();
             }
         } else if (letter == "✓" && playing == false) {
-            location.reload()
+            location.reload();
         }
     });
 });
