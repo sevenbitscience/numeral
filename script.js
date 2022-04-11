@@ -132,14 +132,7 @@ $(document).ready(function () {
             showWord(guess);
         }
         else if (e.which == 13) {
-            ansr = (Math.floor(Math.random() * 90000) + 10000) + '';
-            $(".row").remove();
-            $(".letters").remove();
-            $(".popup").remove();
-            guess = '';
-            rowNum = 0;
-            playing = true;
-            GenerateBoard(rows);
+            location.reload()
         }
     });
         
@@ -170,15 +163,7 @@ $(document).ready(function () {
                 errorShake();
             }
         } else if (letter == "✓" && playing == false) {
-            ansr = (Math.floor(Math.random() * 90000) + 10000) + '';
-            $(".row").remove();
-            $(".letters").remove();
-            $(".popup").remove();
-            guess = '';
-            rowNum = 0;
-            playing = true;
-            GenerateBoard(rows);
-            return;
+            location.reload()
         }
     });
 });
