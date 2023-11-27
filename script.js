@@ -6,7 +6,7 @@ var rows = 6;
 
 var letters = ['✓', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '⌫'];
 
-var ansr = (Math.floor(Math.random() * 90000) + 10000) + '';
+var ansr = (Math.floor(Math.random() * 9000000000) + 1000000000) + '';
 
 function showWord(num) {
     let wrdArray = num.split("");
@@ -21,7 +21,7 @@ function showWord(num) {
         i++;
     }
     
-    while (i<5) {
+    while (i<10) {
         $(activeLetter).text("");
         activeLetter = $(activeLetter).next();
         i++;
@@ -46,7 +46,7 @@ function testWord(num_in) {
         occurrences.push(ans_chars.filter(x => x === ''+i).length);
     }
 
-    for (let i=0; i<=5; i++) {
+    for (let i=0; i<=10; i++) {
         if (ans_chars.includes(word_chars[i]) && word_chars[i] == ans_chars[i]) {
             $(activeLetter).css("background-color", "green");
             $($(".letters .lttr").eq(letters.indexOf(word_chars[i]))).css("background-color", "green");
@@ -56,7 +56,7 @@ function testWord(num_in) {
     }
 
     activeLetter = $(activeRow).first();
-    for (let i=0; i<=5; i++) {
+    for (let i=0; i<=10; i++) {
         if (ans_chars.includes(word_chars[i]) && word_chars[i] != ans_chars[i]) {
             if (occurrences[parseInt(word_chars[i])] > 0) {
                 $(activeLetter).css("background-color", "yellow");
@@ -99,7 +99,7 @@ function testWord(num_in) {
 function GenerateBoard(height) {
     for (let r = 0; r < height; r++) {
         $(".game-container").append("<div class=\"row\"></div>");
-        for (let r = 0; r < 5; r++) {
+        for (let r = 0; r < 10; r++) {
             $(".game-container .row").last().append("<div class=\"square\"></div>");
         }
     }
@@ -118,12 +118,12 @@ $(document).ready(function () {
 
     $("body").keydown(function (e) {
         if (playing) {
-            if (e.which >= 48 && e.which <= 57 && guess.length < 5) {
+            if (e.which >= 48 && e.which <= 57 && guess.length < 10) {
                 guess = guess + String.fromCharCode(e.which);
             } else if (e.which == 8) {
                 guess = guess.slice(0, -1);
             } else if (e.which == 13) {
-                if (rowNum < 6 && guess.length == 5) {
+                if (rowNum < rows && guess.length == 10) {
                     testWord(guess);
                 } else {
                     errorShake();
@@ -142,7 +142,7 @@ $(document).ready(function () {
         if (playing) {
             if (rowNum < rows) {
                 if (letter == "✓") {
-                    if (guess.length == 5) {
+                    if (guess.length == 10) {
                         testWord(guess);
                         return;
                     } else {
@@ -155,7 +155,7 @@ $(document).ready(function () {
                     showWord(guess);
                     return;
                 }
-                if (guess.length < 5) {
+                if (guess.length < 10) {
                     guess = guess + letter;
                     showWord(guess);
                 }
